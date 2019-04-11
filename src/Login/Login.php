@@ -60,7 +60,7 @@ class Login
         $params = [
             'SP_CERT'    => $certificate,
             'CLIENTFLOW' => 'Oceslogin2',
-            'TIMESTAMP'  => $this->timeStamp,
+            'TIMESTAMP'  => base64_encode($this->timeStamp), // added required base64 timestamp encoding
         ];
 
         // Add origin if set
